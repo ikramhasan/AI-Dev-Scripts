@@ -103,7 +103,7 @@ ollama run mistral:7b-instruct
 > Or,
 >
 > ```console
-> $ ./ai_review *py *js # for all files with .py and .js extensions
+> $ ./ai_review *.py *.js # for all files with .py and .js extensions
 > ```
 
 <h4>ai_readme</h4>
