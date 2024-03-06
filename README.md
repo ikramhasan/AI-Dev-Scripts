@@ -17,6 +17,7 @@
 - [📦 Scripts](#-scripts)
 - [🚀 Getting Started](#-getting-started)
   - [⚙️ Installation](#️-installation)
+  - [🤖 Usage](#-usage)
 - [🤝 Contributing](#-contributing)
 - [🎗 License](#-license)
 - [🔗 Acknowledgments](#-acknowledgments)
@@ -87,11 +88,47 @@ ollama run deepseek-coder:6.7b-instruct
 ollama run mistral:7b-instruct
 ```
 
-**6. Run the scripts:**
 
-```sh
-./ai_review
-```
+
+### 🤖 Usage
+
+<h4>ai_review</h4>
+
+> Navigate to the directory where you want to run the script and execute the command below:
+>
+> ```console
+> $ ./ai_review file.py file.js # for specific files
+> ```
+>
+> Or,
+>
+> ```console
+> $ ./ai_review *py *js # for all files with .py and .js extensions
+> ```
+
+<h4>ai_readme</h4>
+
+> Navigate to the directory where you want to generate the readme and run the command below:
+>
+> ```console
+> $ ./ai_readme
+> ```
+
+<h4>ai_commit</h4>
+
+> Navigate to your repo and run ai_commit using the command below:
+>
+> ```console
+> $ ./ai_commit
+> ```
+
+<h4>ai_pr</h4>
+
+> Copy the pr link and run the command below:
+>
+> ```console
+> $ ./ai_pr <pr_link>
+> ```
 
 ---
 
@@ -117,7 +154,7 @@ Contributions are welcome! Here are several ways you can contribute:
 
 ## 🎗 License
 
-This project is protected under the [MIT](https://choosealicense.com/licenses/mit) License. 
+This project is protected under the [MIT](https://choosealicense.com/licenses/mit) License.
 
 ---
 
