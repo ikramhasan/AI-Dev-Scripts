@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# AI PR Review
+ai_pr () {
+  echo "Reviewing PR $1"
+  diff=$(gh pr diff "$1")
+  ollama run deepseek-coder:6.7b-instruct "Provide a brief summary of this PR, and highlight any violations of security and coding best practices in the following git changes diff: $diff"
+}
+
+ai_pr $1

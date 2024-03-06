@@ -17,8 +17,9 @@ review_files() {
     local files=$(find . -type f -name "*.$file_format")
 
     for file in $files; do
+        echo "Reviewing $file"
         content=$(cat "$file")
-        ollama_suggestions=$(ollama run mistral:7b-instruct "Code: $content $prompt")
+        ollama_suggestions=$(ollama run deepseek-coder:6.7b-instruct "Code: $content $prompt")
 
         # Write suggestions to the review file
         echo "### Suggestions for $file" >> "$review_file"

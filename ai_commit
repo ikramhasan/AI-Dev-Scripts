@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# AI Commit Message
+ai_commit() {
+ diff=$(git diff --cached)
+ ollama run deepseek-coder:6.7b-instruct "Diff: $diff. Suggest a git commit message for the diff provided above. The commit message should be written in active voice and should follow conventional commit style, and the format should be <type>[scope]: <description>. Example: fix(authentication): add password regex pattern."
+}
+
+ai_commit
