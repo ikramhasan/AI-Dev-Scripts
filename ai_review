@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Define the file formats to review
+file_formats=("$@")
+
+# Get the current date
+current_date=$(date +%Y-%m-%d)
+
+# Create a markdown file for review
+review_file="review-$current_date.md"
+prompt="\n Review this code, provide suggestions for improvement, and highlight any violations of security and coding best practices, improve readability, and maintainability. Remove any code smells and anti-patterns. Respond in markdown format. Or just skip if you think the code is already perfect."
+touch "$review_file"
+
+# Function to review files
+review_files() {
+    local file_format="$1"
+    local files=$(find . -type f -name "*.$file_format")
+
+    for file in $files; do
+        content=$(cat "$file")
+        ollama_suggestions=$(ollama run mistral:7b-instruct "Code: $content $prompt")
+
+        # Write suggestions to the review file
+        echo "### Suggestions for $file" >> "$review_file"
+        echo "$ollama_suggestions" >> "$review_file"
+        echo "" >> "$review_file"
+    done
+}
+
+# Review files for each file format
+for format in "${file_formats[@]}"; do
+    review_files "$format"
+done
+
+echo "Review completed. Suggestions saved in $review_file"
