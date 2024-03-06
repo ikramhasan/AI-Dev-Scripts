@@ -1,5 +1,5 @@
 <p align="center">
-    <h1 align="center">AI SCRIPTS</h1>
+    <h1 align="center">AI DEV SCRIPTS</h1>
 </p>
 <p align="center">
     <em>Streamline Code Review, Commit & Speed Up Dev Process. Your Own Personal Senior Engineer For Free!</em>
@@ -25,7 +25,7 @@
 
 ## 📍 Overview
 
-AI SCRIPTS, leverages Local LLMs to streamline code improvement workflows and enhance your coding. It includes scripts like `ai_review` for suggestion generation, `ai_pr` for pull request analysis, and `ai_commit` for suggested commit messages. Additionally, it features an `ai_readme` script that generates customized readmes based on directory locations. Overall, it utilizes Ollama's DeepSeek Coder, and Mistral model to automate code improvements, security checks, and documentation within the repository ecosystem.
+AI DEV SCRIPTS, leverages Local LLMs to streamline code improvement workflows and enhance your coding. It includes scripts like `ai_review` for suggestion generation, `ai_pr` for pull request analysis, and `ai_commit` for suggested commit messages. Additionally, it features an `ai_readme` script that generates customized readmes based on directory locations. Overall, it utilizes Ollama's DeepSeek Coder, and Mistral model to automate code improvements, security checks, and documentation within the repository ecosystem.
 
 ---
 
@@ -73,9 +73,7 @@ git clone https://github.com/ikramhasan/AI-Dev-Scripts.git
 pip install readmeai
 ```
 
-**3. Install ollama:**
-
-Download the latest release from [here](https://ollama.com/download)
+**3. Install ollama:** Download the latest release from [here](https://ollama.com/download)
 
 **4. Install deepseek-coder:**
 
