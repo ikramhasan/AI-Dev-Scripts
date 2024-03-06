@@ -8,13 +8,13 @@ current_date=$(date +%Y-%m-%d)
 
 # Create a markdown file for review
 review_file="review-$current_date.md"
-prompt="\n Review this code, provide suggestions for improvement, and highlight any violations of security and coding best practices, improve readability, and maintainability. Remove any code smells and anti-patterns. Respond in markdown format. Or just skip if you think the code is already perfect."
+prompt="\n Review this code, provide suggestions for improvement, coding best practices, improve readability, and maintainability. Remove any code smells and anti-patterns. Provide code examples for your suggestion. Respond in markdown format. If the file does not have any code or does not need any changes, say 'No changes needed'."
 touch "$review_file"
 
 # Function to review files
 review_files() {
-    local file_format="$1"
-    local files=$(find . -type f -name "*.$file_format")
+    local file_formats="$1"
+    local files=$(find . -type f -name "$file_formats")
 
     for file in $files; do
         echo "Reviewing $file"
@@ -22,7 +22,7 @@ review_files() {
         ollama_suggestions=$(ollama run deepseek-coder:6.7b-instruct "Code: $content $prompt")
 
         # Write suggestions to the review file
-        echo "### Suggestions for $file" >> "$review_file"
+        echo "# Suggestions for $file" >> "$review_file"
         echo "$ollama_suggestions" >> "$review_file"
         echo "" >> "$review_file"
     done
