@@ -88,7 +88,13 @@ ollama run deepseek-coder:6.7b-instruct
 ollama run mistral:7b-instruct
 ```
 
-**6. (Optional) Add the scripts to your PATH:**
+**6. Make the scripts executable:**
+
+```sh
+chmod +x ./ai_review
+```
+
+**7. (Optional) Add the scripts to your PATH:**
 
 ```sh
 export PATH=$PATH:/path/to/AI-Dev-Scripts
