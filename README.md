@@ -1,4 +1,7 @@
 <p align="center">
+    <img src="banner.png" />
+</p>
+<p align="center">
     <h1 align="center">AI DEV SCRIPTS</h1>
 </p>
 <p align="center">
