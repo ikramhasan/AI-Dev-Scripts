@@ -143,6 +143,22 @@ export PATH=$PATH:/path/to/AI-Dev-Scripts
 > $ ./ai_pr <pr_link>
 > ```
 
+<h4>ai_chat_md</h4>
+
+> Navigate to the folder where the file is located and run the command below:
+>
+> ```console
+> $ ./ai_chat_md -f blog.md -q "What is this blog about?"
+> ```
+
+<h4>ai_chat_pdf</h4>
+
+> Navigate to the folder where the file is located and run the command below:
+>
+> ```console
+> $ ./ai_chat_pdf -f cv.pdf -q "What are the acheivements listed here?"
+> ```
+
 ---
 
 ## 🤝 Contributing
