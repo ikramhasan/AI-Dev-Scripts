@@ -40,18 +40,20 @@ AI DEV SCRIPTS, leverages Local LLMs to streamline code improvement workflows an
 - **AI Commit**: Generates commit messages using an AI model, adhering to conventional commit style and active voice guidelines.
 - **AI Readme**: Generates customized readmes based on the repository's location, utilizing OpenAI's Ollama API and the Mistral model.
 - **AI Chat**: Chat with websites, pdf, and markdown files, a RAG in your own terminal.
+- **AI Describe**: Describe an image.
 
 ---
 
 ## 📦 Scripts
 
-| File                   | Summary                                                                                                                                                                                                                                                                                                                                                                           |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ai_review](ai_review) | This ai_review file initiates the script that scours through specified file formats and requests AI-generated suggestions for improvement. It generates a markdown file containing improvements, best practices, readability enhancements, maintainability tips, and potential code examples, creating an impactful code improvement workflow within this repository's ecosystem. |
-| [ai_pr](ai_pr)         | The `ai_pr` script analyzes GitHub Pull Requests by calling an external Ollama DeepSeek Coder service. It generates brief summaries and flags potential security or coding best practices issues from the presented git changes. This tool supports automated PR review processes in the given repository infrastructure.                                                         |
-| [ai_commit](ai_commit) | The ai_commit script in this repository's scripts folder is designed to generate commit messages using an AI model. This tool runs the deepseek-coder model from Ollama to suggest a commit message based on the git diff provided as input, adhering to conventional commit style and active voice guidelines.                                                                   |
-| [ai_readme](ai_readme) | Generate readme files for directories using the AI, named ai_readme script. The script triggers an AI to produce customized readmes based on the repository's location, utilizing OpenAI's Ollama API and the Mistral model. Emojis and flat-square badge styles are incorporated in the readme generation process.                                                               |
-| [ai_chat](ai_chat)     | Chat with web pages, pdfs, or markdown files of any size. Complete rag functionality.                                                                                                                                                                                                                                                                                             |
+| File                       | Summary                                                                                                                                                                                                                                                                                                                                                                             |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ai_review](ai_review)     | This `ai_review` file initiates the script that scours through specified file formats and requests AI-generated suggestions for improvement. It generates a markdown file containing improvements, best practices, readability enhancements, maintainability tips, and potential code examples, creating an impactful code improvement workflow within this repository's ecosystem. |
+| [ai_pr](ai_pr)             | The `ai_pr` script analyzes GitHub Pull Requests by calling an external Ollama DeepSeek Coder service. It generates brief summaries and flags potential security or coding best practices issues from the presented git changes. This tool supports automated PR review processes in the given repository infrastructure.                                                           |
+| [ai_commit](ai_commit)     | The `ai_commit` script in this repository's scripts folder is designed to generate commit messages using an AI model. This tool runs the deepseek-coder model from Ollama to suggest a commit message based on the git diff provided as input, adhering to conventional commit style and active voice guidelines.                                                                   |
+| [ai_readme](ai_readme)     | Generate readme files for directories using the AI, named `ai_readme` script. The script triggers an AI to produce customized readmes based on the repository's location, utilizing OpenAI's Ollama API and the Mistral model. Emojis and flat-square badge styles are incorporated in the readme generation process.                                                               |
+| [ai_chat](ai_chat)         | Chat with web pages, PDFs, or markdown files of any size. Complete rag functionality.                                                                                                                                                                                                                                                                                               |
+| [ai_describe](ai_describe) | Describe an image (uses the `llava` model).                                                                                                                                                                                                                                                                                                                                         |
 
 ---
 
@@ -147,7 +149,7 @@ export PATH=$PATH:/path/to/AI-Dev-Scripts
 
 <h4>ai_chat</h4>
 
-> Navigate to the where you want to run the script and run the command below:
+> Navigate to the directory where you want to run the script and run the command below:
 >
 > ```console
 > $ ./ai_chat -t md -f blog.md -q "What is this blog about?"
@@ -164,6 +166,16 @@ export PATH=$PATH:/path/to/AI-Dev-Scripts
 > ```console
 > $ ./ai_chat -t web -f https://www.example.com -q "What is this blog about?"
 > ```
+
+<h4>ai_describe</h4>
+
+> Navigate to the directory of your image and run the command below:
+>
+> ```console
+> $ ./ai_describe
+> ```
+>
+> Then follow the on-screen instructions.
 
 ---
 

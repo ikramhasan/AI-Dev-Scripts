@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# List all the images in the current directory
+echo "Images in the current directory:"
+images=()
+while IFS= read -r -d '' file; do
+    images+=("$file")
+done < <(find . -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" -o -iname "*.gif" \) -print0)
+
+num_images=${#images[@]}
+
+if [ $num_images -eq 0 ]; then
+    echo "No images found."
+    exit 1
+fi
+
+for ((i=0; i<num_images; i++)); do
+    index=$((i+1))
+    echo "$index: ${images[$i]}"
+done
+
+# Prompt the user to select an image
+read -p "Enter the number corresponding to the image you want: " choice
+
+# Validate the user input
+if ! [[ "$choice" =~ ^[0-9]+$ ]]; then
+    echo "Invalid input. Please enter a number."
+    exit 1
+fi
+
+if [ $choice -ge 1 ] && [ $choice -le $num_images ]; then
+    selected_image="${images[$(($choice - 1))]}"
+    description=$(ollama run llava:latest "Describe what's in this image: $selected_image")
+    # Trim leading whitespace
+    trimmed_string="${description#"${description%%[![:space:]]*}"}"
+    echo "$trimmed_string"
+else
+    echo "Invalid choice. Please select a number between 1 and $num_images."
+    exit 1
+fi
