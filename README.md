@@ -36,6 +36,8 @@ AI DEV SCRIPTS, leverages Local LLMs to streamline code improvement workflows an
 - **AI PR**: Analyzes GitHub Pull Requests by calling an external Ollama DeepSeek Coder service.
 - **AI Commit**: Generates commit messages using an AI model, adhering to conventional commit style and active voice guidelines.
 - **AI Readme**: Generates customized readmes based on the repository's location, utilizing OpenAI's Ollama API and the Mistral model.
+- **AI Chat MD**: Chat with markdown files, a RAG in your own terminal.
+- **AI Chat PDF**: Chat with any PDF file.
 
 ---
 
@@ -47,6 +49,8 @@ AI DEV SCRIPTS, leverages Local LLMs to streamline code improvement workflows an
 | [ai_pr](ai_pr)         | The `ai_pr` script analyzes GitHub Pull Requests by calling an external Ollama DeepSeek Coder service. It generates brief summaries and flags potential security or coding best practices issues from the presented git changes. This tool supports automated PR review processes in the given repository infrastructure.                                                         |
 | [ai_commit](ai_commit) | The ai_commit script in this repository's scripts folder is designed to generate commit messages using an AI model. This tool runs the deepseek-coder model from Ollama to suggest a commit message based on the git diff provided as input, adhering to conventional commit style and active voice guidelines.                                                                   |
 | [ai_readme](ai_readme) | Generate readme files for directories using the AI, named ai_readme script. The script triggers an AI to produce customized readmes based on the repository's location, utilizing OpenAI's Ollama API and the Mistral model. Emojis and flat-square badge styles are incorporated in the readme generation process.                                                               |
+| [ai_chat_md](ai_chat_md) | Chat with markdown files of any size. Complete rag functionality.                                                               |
+| [ai_chat_pdf](ai_chat_pdf) | Chat with pdf files of any size. Complete rag functionality.                                                                |
 
 ---
 
@@ -139,6 +143,22 @@ export PATH=$PATH:/path/to/AI-Dev-Scripts
 >
 > ```console
 > $ ./ai_pr <pr_link>
+> ```
+
+<h4>ai_chat_md</h4>
+
+> Navigate to the folder where the file is located and run the command below:
+>
+> ```console
+> $ ./ai_chat_md -f blog.md -q "What is this blog about?"
+> ```
+
+<h4>ai_chat_pdf</h4>
+
+> Navigate to the folder where the file is located and run the command below:
+>
+> ```console
+> $ ./ai_chat_pdf -f cv.pdf -q "What are the acheivements listed here?"
 > ```
 
 ---
