@@ -36,6 +36,8 @@ AI DEV SCRIPTS, leverages Local LLMs to streamline code improvement workflows an
 - **AI PR**: Analyzes GitHub Pull Requests by calling an external Ollama DeepSeek Coder service.
 - **AI Commit**: Generates commit messages using an AI model, adhering to conventional commit style and active voice guidelines.
 - **AI Readme**: Generates customized readmes based on the repository's location, utilizing OpenAI's Ollama API and the Mistral model.
+- **AI Chat MD**: Chat with markdown files, a RAG in your own terminal.
+- **AI Chat PDF**: Chat with any PDF file.
 
 ---
 
