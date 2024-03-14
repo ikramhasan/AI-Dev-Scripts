@@ -12,7 +12,7 @@
 
 <br><!-- TABLE OF CONTENTS -->
 
-<details>
+<details open>
   <summary>Table of Contents</summary><br>
 
 - [📍 Overview](#-overview)
@@ -24,6 +24,7 @@
 - [🤝 Contributing](#-contributing)
 - [🎗 License](#-license)
 - [🔗 Acknowledgments](#-acknowledgments)
+- [⭐ Star History](#-star-history)
 </details>
 <hr>
 
@@ -209,6 +210,10 @@ This project is protected under the [MIT](https://choosealicense.com/licenses/mi
 
 - ollama
 - readmeai
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=ikramhasan/AI-Dev-Scripts&type=Date)](https://star-history.com/#ikramhasan/AI-Dev-Scripts&Date)
 
 [**Return**](#-overview)
 
