@@ -54,6 +54,7 @@ AI DEV SCRIPTS, leverages Local LLMs to streamline code improvement workflows an
 | [ai_readme](ai_readme)     | Generate readme files for directories using the AI, named `ai_readme` script. The script triggers an AI to produce customized readmes based on the repository's location, utilizing OpenAI's Ollama API and the Mistral model. Emojis and flat-square badge styles are incorporated in the readme generation process.                                                               |
 | [ai_chat](ai_chat)         | Chat with web pages, PDFs, or markdown files of any size. Complete rag functionality.                                                                                                                                                                                                                                                                                               |
 | [ai_describe](ai_describe) | Describe an image (uses the `llava` model).                                                                                                                                                                                                                                                                                                                                         |
+| [openai](openai)           | General purpose openai script. It's a dependency for several other scripts here.                                                                                                                                                                                                                                                                                                    |
 
 ---
 
@@ -177,6 +178,23 @@ export PATH=$PATH:/path/to/AI-Dev-Scripts
 >
 > Then follow the on-screen instructions.
 
+<h4>openai</h4>
+
+> The script requires `jq` to be installed. Run `brew install jq` to install it.
+> After jq is installed, add the OPENAI_API_KEY variable to your path by running this command:
+>
+> ```console
+> export OPENAI_API_KEY=your_openai_api_key
+> ```
+>
+> Then run the script using the command below:
+>
+> ```console
+> $ ./openai <prompt>
+> ```
+>
+> Then follow the on-screen instructions.
+
 ---
 
 ## 🤝 Contributing
@@ -209,6 +227,7 @@ This project is protected under the [MIT](https://choosealicense.com/licenses/mi
 
 - ollama
 - readmeai
+- [Janlay Wu](https://github.com/janlay) for the [openai](https://github.com/janlay/openai-cli) script
 
 [**Return**](#-overview)
 

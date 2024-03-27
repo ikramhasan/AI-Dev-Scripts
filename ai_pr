@@ -2,9 +2,34 @@
 
 # AI PR Review
 ai_pr () {
+  command="ollama run deepseek-coder:6.7b-instruct"
+  while getopts ":m:" opt; do
+    case ${opt} in
+      m)
+        if [ "$OPTARG" = "openai" ]; then
+          echo "Using OpenAI's GPT-3 model for code review."
+          command="openai"
+        elif [ "$OPTARG" = "deepseek" ]; then
+          echo "Using DeepSeek Coder's 6.7b model for code review."
+          command="ollama run deepseek-coder:6.7b-instruct"
+        elif [ "$OPTARG" = "mistral" ]; then
+          echo "Using Mistral's 7b model for code review."
+          command="ollama run mistral:7b-instruct"
+        fi
+        ;;
+      \?)
+        echo "Invalid option: $OPTARG" 1>&2
+        ;;
+      :)
+        echo "Invalid option: $OPTARG requires an argument" 1>&2
+        ;;
+    esac
+  done
+  shift $((OPTIND -1))
+
   echo "Reviewing PR $1"
   diff=$(gh pr diff "$1")
-  ollama run deepseek-coder:6.7b-instruct "Provide a brief summary of this PR, and highlight any violations of security and coding best practices in the following git changes diff: $diff"
+  $command "PR diff: $diff. Suppose you wrote the code in the git PR diff above. Provide a brief summary of this PR, ignore any files that are not critical to the code, i.e: package-json.lock, and state the changes you made to existing code in markdown format, and in first person."
 }
 
-ai_pr $1
+ai_pr "$@"
