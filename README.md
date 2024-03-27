@@ -181,7 +181,12 @@ export PATH=$PATH:/path/to/AI-Dev-Scripts
 
 <h4>openai</h4>
 
-> The script requires `jq` to be installed. Run `brew install jq` to install it.
+> The script requires `jq` to be installed. Run the following command to install it.
+>
+> ```console
+> brew install jq
+> ```
+>
 > After jq is installed, add the OPENAI_API_KEY variable to your path by running this command:
 >
 > ```console
